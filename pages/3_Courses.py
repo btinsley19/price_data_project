@@ -18,7 +18,7 @@ st.header('USC Price Classes Offered', divider='red')
 st.subheader('')
 
 combined_df = pd.read_csv("./data/courses.csv")
-data = combined_df[["Course number", "Course title", "Instructor", "Units", "Registered", "Department", "Term"]]
+data = combined_df[["Course number", "Course title", "Instructor", "Units", "Registered", "Term"]]
 st.dataframe(
     data,
     column_config={

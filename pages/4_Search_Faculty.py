@@ -31,7 +31,7 @@ publications = pd.read_csv('./data/articles.csv')
 publications = publications[["name","title", "year", "citation", "type"]].reset_index(drop=True)
 
 courses = pd.read_csv("./data/courses.csv")
-courses = courses[["Course number", "Course title", "Instructor", "Units", "Registered", "Department", "Term"]].reset_index(drop=True)
+courses = courses[["Course number", "Course title", "Instructor", "Units", "Registered", "Term"]].reset_index(drop=True)
 
 
 # Filter faculty by search term
