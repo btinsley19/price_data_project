@@ -30,7 +30,7 @@ faculty = faculty[["Name", "Position", "Expertise", "Degree"]].reset_index(drop=
 publications = pd.read_csv('./data/articles.csv')
 publications = publications[["name","title", "year", "citation", "type"]].reset_index(drop=True)
 
-courses = pd.concat([pd.read_csv("./data/AY23.csv"), pd.read_csv("./data/AY24.csv")], ignore_index=True)
+courses = pd.read_csv("./data/courses.csv")
 courses = courses[["Course number", "Course title", "Instructor", "Units", "Registered", "Department", "Term"]].reset_index(drop=True)
 
 

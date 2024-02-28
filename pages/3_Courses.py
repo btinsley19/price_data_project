@@ -17,9 +17,7 @@ st.markdown("""
 st.header('USC Price Classes Offered', divider='red')
 st.subheader('')
 
-df1 = pd.read_csv("./data/AY23.csv")
-df2 = pd.read_csv("./data/AY24.csv")
-combined_df = pd.concat([df1, df2], ignore_index=True)
+combined_df = pd.read_csv("./data/courses.csv")
 data = combined_df[["Course number", "Course title", "Instructor", "Units", "Registered", "Department", "Term"]]
 st.dataframe(
     data,
