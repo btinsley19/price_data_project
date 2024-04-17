@@ -2,32 +2,25 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-st.set_page_config(layout="wide", page_title="Price Data Project", page_icon = "✌")
-
-# st.markdown("""
-#     <style>
-#     #MainMenu {display: none;}
-#     .stDeployButton {display: none;}
-#     [data-testid="stHeader"] {background-color: #222222;}
-#     .main.st-emotion-cache-uf99v8.ea3mdgi8 {background-color: #222222;}
-#     .st-emotion-cache-1dj0hjr{color: #FFC72C;}
-#     .st-emotion-cache-1m6wrpk.eczjsme5 {color: #fff;}
-#     .st-emotion-cache-6qob1r.eczjsme3 {background-color: #990000;}
-    
-#     </style>
-#     """, unsafe_allow_html=True)
+st.set_page_config(layout="wide", page_title="Price Data Project", page_icon="✌")
 
 st.header('USC Price Publication Data', divider='red')
 st.subheader('')
 
+# Load the data
 df = pd.read_csv('./data/publications.csv')
-df = df[["name","title", "year", "citation", "type"]]
+df = df[["name", "title", "year", "citation", "type"]]
 
+# Convert 'year' column to numeric, handling errors by coercing non-numeric values to NaN
 df['year'] = pd.to_numeric(df['year'], errors='coerce')
-df_year = df.groupby('year').agg({'title':'count', 'citation':'sum'}).reset_index()
-df_year['year'] = pd.to_numeric(df_year['year'], errors='coerce')
 
+# Remove rows with NaN values in the 'year' column
+df.dropna(subset=['year'], inplace=True)
 
+# Group by 'year' and aggregate counts of titles and sum of citations
+df_year = df.groupby('year').agg({'title': 'count', 'citation': 'sum'}).reset_index()
+
+# Create figure and axis objects
 fig, ax1 = plt.subplots()
 
 # Plot publications over time on the primary y-axis
@@ -49,4 +42,3 @@ ax2.legend(loc='upper right')
 
 # Show the plot in Streamlit
 st.pyplot(fig)
-
