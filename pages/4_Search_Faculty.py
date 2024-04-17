@@ -14,7 +14,7 @@ st.set_page_config(layout="wide", page_title="Price Data Project", page_icon = "
 #     </style>
 #     """, unsafe_allow_html=True)
 
-st.header('USC Faculty Search', divider='red')
+st.header('USC Price Faculty Search', divider='red')
 st.subheader('')
 
 # faculty = pd.read_csv('./data/faculty.csv')
