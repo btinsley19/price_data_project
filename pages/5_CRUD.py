@@ -4,6 +4,10 @@ from pymongo.server_api import ServerApi
 import hashlib
 from bson import ObjectId
 
+st.set_page_config(layout="wide", page_title="Price Data Project", page_icon="✌")
+
+st.header('Database Management', divider='red')
+st.subheader('')
 
 # Database connection setup
 uri1 = "mongodb+srv://btinsley:pricedataproject@cluster0.dch9w5y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
