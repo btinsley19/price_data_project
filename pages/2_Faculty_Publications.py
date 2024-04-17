@@ -18,8 +18,8 @@ st.set_page_config(layout="wide", page_title="Price Data Project", page_icon = "
 st.header('USC Price Faculty Publications', divider='red')
 st.subheader('')
 
-df = pd.read_csv('./data/articles.csv')
-df = df[["name","title", "year", "citation", "type"]]
+df = pd.read_csv('./data/publications.csv')
+df = df[["name","title", "year", "publisher", "citation", "type"]]
 st.dataframe(
     df,
     column_config={

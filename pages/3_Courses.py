@@ -17,9 +17,8 @@ st.set_page_config(layout="wide", page_title="Price Data Project", page_icon = "
 st.header('USC Price Classes Offered', divider='red')
 st.subheader('')
 
-combined_df = pd.read_csv("./data/courses.csv")
-data = combined_df[["Course number", "Course title", "Instructor", "Units", "Registered", "Term"]]
-data = data[data["Registered" != 0]]
+combined_df = pd.read_csv("./data/courses_final.csv", dtype={'term': str})
+data = combined_df[["Course number", "Course title", "Instructor", "Units", "Registered", "term"]]
 st.dataframe(
     data,
     column_config={

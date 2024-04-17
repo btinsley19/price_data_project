@@ -27,12 +27,11 @@ st.subheader('')
 faculty = pd.read_csv('./data/faculty.csv')
 faculty = faculty[["Name", "Position", "Expertise", "Degree"]].reset_index(drop=True)
 
-publications = pd.read_csv('./data/articles.csv')
-publications = publications[["name","title", "year", "citation", "type"]].reset_index(drop=True)
+publications = pd.read_csv('./data/publications.csv')
+publications = publications[["name","title", "year", "publisher", "citation", "type"]].reset_index(drop=True)
 
-courses = pd.read_csv("./data/courses.csv")
-courses = courses[["Course number", "Course title", "Instructor", "Units", "Registered", "Term"]].reset_index(drop=True)
-
+courses = pd.read_csv("./data/courses_final.csv", dtype={'term': str})
+courses = courses[["Course number", "Course title", "Instructor", "Units", "Registered", "term", "Department"]].reset_index(drop=True)
 
 # Filter faculty by search term
 text_search = st.text_input("Search Faculty", value="")
@@ -60,7 +59,6 @@ st.dataframe(
     # height=700,
     hide_index=True,
 )
-# st.table(matching_publications)
 
 # Display matching courses
 st.subheader("Courses Taught by Matching Faculty")
