@@ -7,9 +7,12 @@ st.set_page_config(layout="wide", page_title="Price Data Project", page_icon="âœ
 st.header('USC Price Publication Data', divider='red')
 st.subheader('')
 
-# Load the data
-df = pd.read_csv('./data/publications.csv')
+# Load the data, specifying 'year' column as string data type
+df = pd.read_csv('./data/publications.csv', dtype={'year': str})
 df = df[["name", "title", "year", "citation", "type"]]
+
+# Remove commas from 'year' column
+df['year'] = df['year'].str.replace(',', '')
 
 # Convert 'year' column to numeric, handling errors by coercing non-numeric values to NaN
 df['year'] = pd.to_numeric(df['year'], errors='coerce')
@@ -42,3 +45,5 @@ ax2.legend(loc='upper right')
 
 # Show the plot in Streamlit
 st.pyplot(fig)
+
+st.dataframe(df)
