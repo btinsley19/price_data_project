@@ -25,6 +25,8 @@ df = df[["name","title", "year", "citation", "type"]]
 
 df['year'] = pd.to_numeric(df['year'], errors='coerce')
 df_year = df.groupby('year').agg({'title':'count', 'citation':'sum'}).reset_index()
+df_year['year'] = pd.to_numeric(df_year['year'], errors='coerce')
+
 
 fig, ax1 = plt.subplots()
 
