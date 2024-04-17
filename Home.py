@@ -20,8 +20,9 @@ st.set_page_config(layout="wide", page_title="Price Data Project", page_icon = "
 
 st.header('USC Price Data Project', divider='red')
 st.subheader('Introduction')
-st.markdown('''This is a tool that lets users view publications from USC
-            Price faculty. ''')
+st.markdown('''This is a tool I made that lets users view USC Price publication and teaching data.''')
+st.markdown('''Data was scraped from the USC Price website, google scholar, and the USC Course Catalogue.''')
+st.markdown('''If you have any questions, comments, or feedback, please email me btinsley@usc.edu''')
 
 
 
