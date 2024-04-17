@@ -23,6 +23,7 @@ st.subheader('')
 df = pd.read_csv('./data/publications.csv')
 df = df[["name","title", "year", "citation", "type"]]
 
+df['year'] = df['year'].astype(int)
 df_year = df.groupby('year').agg({'title':'count', 'citation':'sum'}).reset_index()
 
 fig, ax1 = plt.subplots()
