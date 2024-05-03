@@ -2,6 +2,8 @@
 
 The Price Data Project is a joint effort between myself (Brian Tinsley) and Professor Alice Chen with USC Price.  
 This collaborative project aims to create a centralized hub for accessing faculty publications and course data relevant to students, faculty, and administrators.  
+  
+Check out the [Price Data Project!](https://usc-price.streamlit.app/)
 It is still a work in progress and big updates can be expected by Fall 2024.  
 
 ## Overview and File Structure
