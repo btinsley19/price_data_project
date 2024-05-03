@@ -17,7 +17,7 @@ The *courses_final.csv* contains all of the USC Price courses offered since 2017
 The *publications.csv* contains simplified data relating to all publications from USC Price faculty  
 To see the more detailed data for publications, go to the **webscraping/scholars** directory and view the *articles_final.json* file  
 
-Inside the **webscraping** folder, you will find one folder for each of the python scraping scripts (*courses*, *faculty*, *scholars*)  
+Inside the **webscraping** folder, you will find one folder for each of the python scraping scripts (*courses*, *faculty*, *scholars*). 
 These python notebooks are commented throughout and are explained in more depth in my implementation video  
 
 Note that you will be unable to run these scripts since I removed my secret client ID for my ZenRows account (for proxies);
